@@ -11,7 +11,48 @@
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
-        <e p="Struture" t="Include" />
+        <e p="Struture" t="Include">
+          <e p="AI" t="Include">
+            <e p="Behaviors" t="Include" />
+            <e p="Combat" t="Include" />
+            <e p="Navigation" t="Include" />
+          </e>
+          <e p="Editor" t="Include" />
+          <e p="Events" t="Include">
+            <e p="Inter.cs" t="Include" />
+            <e p="system" t="Include" />
+          </e>
+          <e p="Input" t="Include">
+            <e p="Controller" t="Include" />
+            <e p="InputDevice.cs" t="Include" />
+            <e p="Keyboard.cs" t="Include" />
+            <e p="Mouse.cs" t="Include" />
+          </e>
+          <e p="Networking" t="Include" />
+          <e p="Physics" t="Include" />
+          <e p="Renderer" t="Include">
+            <e p="Atlasing" t="Include" />
+            <e p="Generation" t="Include" />
+            <e p="Render" t="Include" />
+            <e p="Texturing" t="Include" />
+          </e>
+          <e p="View" t="Include">
+            <e p="Camera" t="Include" />
+            <e p="Utility" t="Include" />
+          </e>
+          <e p="World" t="Include">
+            <e p="Audio" t="Include" />
+            <e p="Content" t="Include" />
+            <e p="Level" t="Include">
+              <e p="AI" t="Include" />
+              <e p="Entity" t="Include" />
+              <e p="Player" t="Include" />
+              <e p="Soil" t="Include" />
+              <e p="Structure" t="Include" />
+            </e>
+            <e p="UI" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="Engine.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

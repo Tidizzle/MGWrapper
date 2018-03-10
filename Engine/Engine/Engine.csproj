@@ -43,9 +43,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Struture\Events\Inter.cs" />
+    <Compile Include="Struture\Input\InputDevice.cs" />
+    <Compile Include="Struture\Input\Keyboard.cs" />
+    <Compile Include="Struture\Input\Mouse.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Struture" />
+    <Folder Include="Struture\AI\Behaviors" />
+    <Folder Include="Struture\AI\Combat" />
+    <Folder Include="Struture\AI\Navigation" />
+    <Folder Include="Struture\Editor" />
+    <Folder Include="Struture\Events\System" />
+    <Folder Include="Struture\Input\Controller" />
+    <Folder Include="Struture\Networking" />
+    <Folder Include="Struture\Physics" />
+    <Folder Include="Struture\Renderer\Atlasing" />
+    <Folder Include="Struture\Renderer\Generation" />
+    <Folder Include="Struture\Renderer\Render" />
+    <Folder Include="Struture\Renderer\Texturing" />
+    <Folder Include="Struture\View\Camera" />
+    <Folder Include="Struture\View\Utility" />
+    <Folder Include="Struture\World\Audio" />
+    <Folder Include="Struture\World\Content" />
+    <Folder Include="Struture\World\Level\AI" />
+    <Folder Include="Struture\World\Level\Entity" />
+    <Folder Include="Struture\World\Level\Player" />
+    <Folder Include="Struture\World\Level\Soil" />
+    <Folder Include="Struture\World\Level\Structure" />
+    <Folder Include="Struture\World\UI" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="overview.txt" />
