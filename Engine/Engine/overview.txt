@@ -1,0 +1,65 @@
+
+	Manager->Handler->Controller->Authority->Super
+
+
+	Structure
+		|
+		|-> Control Flow Abstracts
+		|
+		|-> Input Manager
+		|-> World Manager
+		|       |-> Content Handler
+		|       |-> Audio Handler
+		|	  	|-> UI
+		|	  	|-> Level
+		|				|-> Soil
+		|				|-> Structure
+		|				|-> Entity
+		|				|-> AI
+		|				|-> Player
+		|				|-> Effect
+		|
+		|-> Networking
+		|-> Renderer
+		|       |-> Texturing
+		|		|-> Generation
+		|		|-> Atlasing
+		|       |-> Drawing
+		|
+		|-> Physics
+		|-> View
+		|		|-> Camera
+		|
+		|-> AI
+		|		|-> Pathfinding
+		|		|-> Combat Engine
+		|		|-> Nav Mesh
+		|
+		|-> Events
+		|       |-> Intermodule Events*
+		|       |-> System Events
+		|
+		|-> Level Editor
+		
+	
+	
+	
+		
+		
+	
+	World ->        UI ->   -> Overlay
+							-> Screen
+			     Level ->   -> LevelLayers ->   -> Soil    ->   -> Penetrable   <-  /- Interactable
+			                                                    -> Solid        <-  /- Interactable
+			                                    -> Structures  
+			                                    -> Objects ->   -> Destructable <-  <- Interactable
+			                                                    -> Movable      <-  <- Interactable
+			                                                    -> Storable     <-  <- Interactable
+			                                                    -> Static
+			                                    -> Ai
+			                                    -> Effects      -> Light
+			                                                    -> Particle
+			                                    -> Player
+			                                    
+
+	
