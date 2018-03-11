@@ -2,12 +2,19 @@
 
 namespace Engine.Struture.Events
 {
-    public static class Inter
+    public class Inter
     {
+                
+        public delegate void MouseVisChangedEventHandler(object sender = null, EventArgs args = null);
+        public static event MouseVisChangedEventHandler MouseVisChanged;
 
-        public static event EventHandler MouseVisChanged; 
+        public static void OnMouseVisChanged()
+        {
+            if (MouseVisChanged != null)
+                MouseVisChanged();
             
-        public delegate MouseVisibility
+            //TODO: Add subscriber in main game to change mouse vis
+        }
         
         
     }

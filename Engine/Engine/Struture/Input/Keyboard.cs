@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using KeyBoard = Microsoft.Xna.Framework.Input.Keyboard;
 
@@ -11,13 +9,16 @@ namespace Engine.Struture.Input
     public class Keyboard : InputDevice
     {
 
-        private static List<KeyboardState> _states;
-
+        private static List<KeyboardState> states;
+        private static int current;
+        private static int previous;
+        
+        
         public static void Initalize()
         {
             BaseInit();
             
-            _states = new List<KeyboardState>();
+            states = new List<KeyboardState>();
         }
         
         
@@ -26,46 +27,49 @@ namespace Engine.Struture.Input
             if (Initalized)
             {
                 //Build up collection to 5 keyboard states before starting to remove the oldest
-                if(_states.Count > 5)
-                    _states.Remove(_states[0]);
+                if(states.Count > 5)
+                    states.Remove(states[0]);
                 
-                _states.Add(KeyBoard.GetState());
+                states.Add(KeyBoard.GetState());
+
+                current = states.Count - 1;
+                previous = states.Count - 2;
             }
         }
 
         public static bool IsKeyDown(Keys Key)
         {
-            if(_states[_states.Count - 1] == null)
+            if(states[current] == null)
                 throw new NullReferenceException("Keyboard State is null, make sure you are initializing first");
 
-            return _states[_states.Count - 1].IsKeyDown(Key);
+            return states[current].IsKeyDown(Key) && states[previous].IsKeyUp(Key);
         }
 
         public static bool IsKeyHeld(Keys Key)
         {
-            if(_states[_states.Count - 1] == null)
+            if(states[current] == null)
                 throw new NullReferenceException("Keyboard State is null, make sure you are initializing first");
 
-            return _states[_states.Count - 2].IsKeyDown(Key) && _states[_states.Count - 1].IsKeyDown(Key);
+            return states[previous].IsKeyDown(Key) && states[current].IsKeyDown(Key);
         }
 
         public static bool IsKeyUp(Keys Key)
         {
-            if (_states[_states.Count - 1] == null)
+            if (states[current] == null)
                 throw new NullReferenceException("Keyboard State is null, make sure you are initializing first");
 
-            return _states[_states.Count -1].IsKeyUp(Key);
+            return states[current].IsKeyUp(Key) && states[previous].IsKeyDown(Key);
         }
 
         public static bool DidDoubleClick(Keys Key)
         {
-            if (_states[_states.Count - 1] == null)
+            if (states[current] == null)
                 throw new NullReferenceException("Keyboard State is null, make sure you are initializing first");
 
-            return _states[_states.Count - 1].IsKeyUp(Key)     && 
-                   _states[_states.Count - 2].IsKeyDown(Key)   &&
-                   _states[_states.Count - 3].IsKeyUp(Key)     && 
-                   _states[_states.Count - 4].IsKeyDown(Key);
+            return states[current].IsKeyUp(Key) && 
+                   states[previous].IsKeyDown(Key) &&
+                   states[states.Count - 3].IsKeyUp(Key) && 
+                   states[states.Count - 4].IsKeyDown(Key);
         }
 
 
@@ -73,8 +77,8 @@ namespace Engine.Struture.Input
         {
             BaseDestroy();
             
-            _states.Clear();
-            _states = null;
+            states.Clear();
+            states = null;
         }
         
     }
