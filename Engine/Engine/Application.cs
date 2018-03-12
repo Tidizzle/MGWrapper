@@ -1,4 +1,7 @@
-﻿using Engine.World;
+﻿using System;
+using System.Collections.Generic;
+using Engine.Rendering;
+using Engine.World;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -13,9 +16,14 @@ namespace Engine
 
         public GraphicsDevice Graphics;
         public GraphicsDeviceManager GraphicsManager;
-        
 
-        // Initialize (-> Load) -> update -> physics step -> late update -> Render -> Ui Render -> Post render update 
+        public Renderer3D GeneralRenderer;
+        public Renderer2D UiRenderer;
+        
+        
+        // initalize   load    update                                    Draw                                             dispose
+        //{‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾}  
+        //Initalize -> Load -> update -> physics step -> late update -> prerender -> render -> pre uirender -> ui render |-> destroy
         
         public Application(GameParams inputParamaters, AudioController audio, ContentController content, UiController ui, LevelController level)
         {
@@ -45,28 +53,94 @@ namespace Engine
         protected override void Initialize()
         {
             base.Initialize();
+
+            if (Audio == null || Content == null || UI == null || Level == null)
+                throw new NullReferenceException("A manager is null, make sure to initalize them");
             
-            
+            Audio.Initalize();
+            Content.Initalize();
+            UI.Initalize();
+            Level.Initalize();
         }
 
         protected override void LoadContent()
         {
             base.LoadContent();
 
+            Audio.Load();
+            Content.Load();
+            UI.Load();
+            Level.Load();
         }
         
         protected override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
             
+            Audio.Update(gameTime);
+            Content.Update(gameTime);
+            UI.Update(gameTime);
+            Level.Update(gameTime);
             
+            
+            PhysicsUpdate(gameTime);
+            LateUpdate(gameTime);
         }
-        
+
+        protected void PhysicsUpdate(GameTime gameTime)
+        {
+            Level.PhysicsUpdate(gameTime);
+        }
+
+        protected void LateUpdate(GameTime gameTimee)
+        {
+            Level.LateUpdate(gameTimee);
+        }
+
         protected override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
+            
+            PreRender();
+            Render();
+            
+            PreUiRender();
+            UiRender();
         }
         
+        protected void PreRender()
+        {
+            Level.PreRender();
+        }
+
+        protected void Render()
+        {
+            GeneralRenderer.Render();
+            UiRenderer.Render();
+        }
+
+        protected void PreUiRender()
+        {
+            UI.PreUiRender();
+        }
+
+        protected void UiRender()
+        {
+            GeneralRenderer.UiRender();
+            UiRenderer.UiRender();
+        }
+        
+
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            
+            Audio.Destroy();
+            Content.Destroy();
+            UI.Destroy();
+            Level.Destroy();
+        }
     }
 
     public struct GameParams

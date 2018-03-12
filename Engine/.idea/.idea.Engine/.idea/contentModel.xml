@@ -33,15 +33,18 @@
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
-        <e p="Renderer" t="Include">
+        <e p="Rendering" t="Include">
           <e p="Atlasing" t="Include" />
           <e p="Generation" t="Include" />
+          <e p="Renderer.cs" t="Include" />
           <e p="Renderer2D.cs" t="Include" />
           <e p="Renderer3D.cs" t="Include" />
           <e p="Texturing" t="Include" />
         </e>
+        <e p="Util.cs" t="Include" />
         <e p="View" t="Include">
           <e p="Camera" t="Include" />
+          <e p="Camera2D.cs" t="Include" />
           <e p="Camera3D.cs" t="Include" />
           <e p="Utility" t="Include" />
         </e>
