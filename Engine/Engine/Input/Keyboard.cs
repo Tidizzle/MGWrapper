@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using KeyBoard = Microsoft.Xna.Framework.Input.Keyboard;
 
 
-namespace Engine.Struture.Input
+namespace Engine.Input
 {
     public class Keyboard : InputDevice
     {
@@ -34,6 +34,8 @@ namespace Engine.Struture.Input
 
                 current = states.Count - 1;
                 previous = states.Count - 2;
+                if (previous < 0)
+                    previous = 0;
             }
         }
 

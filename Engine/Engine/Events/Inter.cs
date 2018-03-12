@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Engine.Struture.Events
+namespace Engine.Events
 {
     public class Inter
     {

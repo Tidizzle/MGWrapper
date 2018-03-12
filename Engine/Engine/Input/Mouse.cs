@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Engine.Struture.Events;
+using Engine.Events;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
-namespace Engine.Struture.Input
+namespace Engine.Input
 {
     public class Mouse : InputDevice
     {
@@ -31,6 +31,12 @@ namespace Engine.Struture.Input
             {
                 if (states.Count > 5)
                     states.Remove(states[oldest]);
+
+                current = states.Count - 1;
+                previous = states.Count - 2;
+                if (previous < 0)
+                    previous = 0;
+                
                 
                 var newestState = Microsoft.Xna.Framework.Input.Mouse.GetState();
                 states.Add(newestState);

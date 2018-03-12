@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
-using Microsoft.Xna.Framework.Input;
-
-namespace Engine.Struture.Input
+﻿namespace Engine.Input
 {
     public class InputDevice
     {

@@ -42,38 +42,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application.cs" />
+    <Compile Include="Events\Inter.cs" />
+    <Compile Include="Input\InputDevice.cs" />
+    <Compile Include="Input\Keyboard.cs" />
+    <Compile Include="Input\Mouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Struture\Events\Inter.cs" />
-    <Compile Include="Struture\Input\InputDevice.cs" />
-    <Compile Include="Struture\Input\Keyboard.cs" />
-    <Compile Include="Struture\Input\Mouse.cs" />
+    <Compile Include="Renderer\Renderer2D.cs" />
+    <Compile Include="Renderer\Renderer3D.cs" />
+    <Compile Include="View\Camera3D.cs" />
+    <Compile Include="World\AudioController.cs" />
+    <Compile Include="World\ContentController.cs" />
+    <Compile Include="World\Manager.cs" />
+    <Compile Include="World\LevelController.cs" />
+    <Compile Include="World\UIController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Struture\AI\Behaviors" />
-    <Folder Include="Struture\AI\Combat" />
-    <Folder Include="Struture\AI\Navigation" />
-    <Folder Include="Struture\Editor" />
-    <Folder Include="Struture\Events\System" />
-    <Folder Include="Struture\Input\Controller" />
-    <Folder Include="Struture\Networking" />
-    <Folder Include="Struture\Physics" />
-    <Folder Include="Struture\Renderer\Atlasing" />
-    <Folder Include="Struture\Renderer\Generation" />
-    <Folder Include="Struture\Renderer\Render" />
-    <Folder Include="Struture\Renderer\Texturing" />
-    <Folder Include="Struture\View\Camera" />
-    <Folder Include="Struture\View\Utility" />
-    <Folder Include="Struture\World\Audio" />
-    <Folder Include="Struture\World\Content" />
-    <Folder Include="Struture\World\Level\AI" />
-    <Folder Include="Struture\World\Level\Entity" />
-    <Folder Include="Struture\World\Level\Player" />
-    <Folder Include="Struture\World\Level\Soil" />
-    <Folder Include="Struture\World\Level\Structure" />
-    <Folder Include="Struture\World\UI" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Content\Content.mgcb" />
     <Content Include="overview.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AI\Behaviors" />
+    <Folder Include="AI\Combat" />
+    <Folder Include="AI\Navigation" />
+    <Folder Include="Editor" />
+    <Folder Include="Events\System" />
+    <Folder Include="Input\Controller" />
+    <Folder Include="Networking" />
+    <Folder Include="Physics" />
+    <Folder Include="Renderer\Atlasing" />
+    <Folder Include="Renderer\Generation" />
+    <Folder Include="Renderer\Texturing" />
+    <Folder Include="View\Camera" />
+    <Folder Include="View\Utility" />
+    <Folder Include="World\Level\AI" />
+    <Folder Include="World\Level\Entity" />
+    <Folder Include="World\Level\Player" />
+    <Folder Include="World\Level\Soil" />
+    <Folder Include="World\Level\Structure" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
