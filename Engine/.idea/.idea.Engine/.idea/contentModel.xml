@@ -64,6 +64,19 @@
         </e>
       </e>
       <e p="Engine.sln" t="IncludeFlat" />
+      <e p="EngineTestApp" t="IncludeRecursive">
+        <e p="Audio.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Content.cs" t="Include" />
+        <e p="EngineTestApp.csproj" t="IncludeRecursive" />
+        <e p="Level.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Ui.cs" t="Include" />
+      </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="TestingBench" t="IncludeRecursive">
         <e p="app.manifest" t="Include" />

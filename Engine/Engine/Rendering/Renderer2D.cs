@@ -3,8 +3,13 @@
     public class Renderer2D : Renderer
     {
         public Renderer3D GenRendLink;
-        
-        
+
+
+        public override void Initalize(Renderer pair)
+        {
+            GenRendLink = (Renderer3D) pair;
+        }
+
         public override void PreRender()
         {
             

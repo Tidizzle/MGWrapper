@@ -2,7 +2,7 @@
 {
     public abstract class Renderer
     {
-        
+        public abstract void Initalize(Renderer pair);
         
         public abstract void PreRender();
         public abstract void Render();

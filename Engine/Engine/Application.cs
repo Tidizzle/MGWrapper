@@ -52,7 +52,7 @@ namespace Engine
 
         protected override void Initialize()
         {
-            base.Initialize();
+            
 
             if (Audio == null || Content == null || UI == null || Level == null)
                 throw new NullReferenceException("A manager is null, make sure to initalize them");
@@ -61,6 +61,8 @@ namespace Engine
             Content.Initalize();
             UI.Initalize();
             Level.Initalize();
+            
+            base.Initialize();
         }
 
         protected override void LoadContent()

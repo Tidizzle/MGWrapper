@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingBench", "TestingBench\TestingBench.csproj", "{872E18DB-61BB-4A10-B5B2-9A4CC05A68EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineTestApp", "EngineTestApp\EngineTestApp.csproj", "{5DBC6435-AA60-4737-99F5-95D3B6FB998A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,14 @@ Global
 		{872E18DB-61BB-4A10-B5B2-9A4CC05A68EE}.Release|Any CPU.ActiveCfg = Release|x86
 		{872E18DB-61BB-4A10-B5B2-9A4CC05A68EE}.Release|x86.ActiveCfg = Release|x86
 		{872E18DB-61BB-4A10-B5B2-9A4CC05A68EE}.Release|x86.Build.0 = Release|x86
+		{5DBC6435-AA60-4737-99F5-95D3B6FB998A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DBC6435-AA60-4737-99F5-95D3B6FB998A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DBC6435-AA60-4737-99F5-95D3B6FB998A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5DBC6435-AA60-4737-99F5-95D3B6FB998A}.Debug|x86.Build.0 = Debug|Any CPU
+		{5DBC6435-AA60-4737-99F5-95D3B6FB998A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DBC6435-AA60-4737-99F5-95D3B6FB998A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DBC6435-AA60-4737-99F5-95D3B6FB998A}.Release|x86.ActiveCfg = Release|Any CPU
+		{5DBC6435-AA60-4737-99F5-95D3B6FB998A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,22 +2,8 @@
 
 namespace Engine.View
 {
-    public class Camera2D : Renderer
+    public class Camera2D
     {
-        public override void PreRender()
-        {
-        }
-
-        public override void Render()
-        {
-        }
-
-        public override void UiRender()
-        {
-        }
-
-        public override void PreUiRender()
-        {
-        }
+        
     }
 }

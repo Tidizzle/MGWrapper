@@ -6,7 +6,12 @@ namespace Engine.Rendering
     {
         public Renderer2D UiRendLink;
 
-        
+
+        public override void Initalize(Renderer pair)
+        {
+            
+        }
+
         public override void PreRender()
         {
             
