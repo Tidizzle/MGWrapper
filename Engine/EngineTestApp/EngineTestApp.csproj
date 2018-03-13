@@ -52,6 +52,8 @@
     <Compile Include="Level.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rend2d.cs" />
+    <Compile Include="Rend3d.cs" />
     <Compile Include="Ui.cs" />
   </ItemGroup>
   <ItemGroup>

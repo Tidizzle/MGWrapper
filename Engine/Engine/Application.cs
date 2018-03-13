@@ -22,10 +22,10 @@ namespace Engine
         
         
         // initalize   load    update                                    Draw                                             dispose
-        //{‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾}  
+        //{‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾}  
         //Initalize -> Load -> update -> physics step -> late update -> prerender -> render -> pre uirender -> ui render |-> destroy
         
-        public Application(GameParams inputParamaters, AudioController audio, ContentController content, UiController ui, LevelController level)
+        public Application(GameParams inputParamaters, AudioController audio, ContentController content, UiController ui, LevelController level, Renderer3D rend3d, Renderer2D rend2d)
         {
 
             GraphicsManager = new GraphicsDeviceManager(this);
@@ -43,6 +43,9 @@ namespace Engine
             Content = content;
             UI = ui;
             Level = level;
+
+            GeneralRenderer = rend3d;
+            UiRenderer = rend2d;
         }
 
         public void Start()
@@ -57,8 +60,8 @@ namespace Engine
             if (Audio == null || Content == null || UI == null || Level == null)
                 throw new NullReferenceException("A manager is null, make sure to initalize them");
             
-            Audio.Initalize();
             Content.Initalize();
+            Audio.Initalize();
             UI.Initalize();
             Level.Initalize();
             
@@ -69,8 +72,8 @@ namespace Engine
         {
             base.LoadContent();
 
-            Audio.Load();
             Content.Load();
+            Audio.Load();
             UI.Load();
             Level.Load();
         }
@@ -79,8 +82,8 @@ namespace Engine
         {
             base.Update(gameTime);
             
-            Audio.Update(gameTime);
             Content.Update(gameTime);
+            Audio.Update(gameTime);
             UI.Update(gameTime);
             Level.Update(gameTime);
             
@@ -101,6 +104,7 @@ namespace Engine
 
         protected override void Draw(GameTime gameTime)
         {
+            GraphicsDevice.Clear(Color.CornflowerBlue);
             base.Draw(gameTime);
             
             PreRender();
@@ -139,9 +143,9 @@ namespace Engine
             base.Dispose(disposing);
             
             Audio.Destroy();
-            Content.Destroy();
             UI.Destroy();
             Level.Destroy();
+            Content.Destroy();
         }
     }
 
