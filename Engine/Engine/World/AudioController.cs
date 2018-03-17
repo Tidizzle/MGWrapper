@@ -11,9 +11,6 @@ namespace Engine.World
         //TODO: Create class to encapuslate a single emitter, target listeners and instances of sounds to play
         
         
-        protected Stack<SoundEffect> PlayStack;
-        protected Stack<SoundEffectInstance> InstanceStack;
-        
         public override void Initalize()
         {
             

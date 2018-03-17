@@ -51,16 +51,21 @@
         <e p="World" t="Include">
           <e p="AudioController.cs" t="Include" />
           <e p="ContentController.cs" t="Include" />
+          <e p="Element.cs" t="Include" />
           <e p="Level" t="Include">
-            <e p="AI" t="Include" />
-            <e p="Entity" t="Include" />
-            <e p="Player" t="Include" />
-            <e p="Soil" t="Include" />
-            <e p="Structure" t="Include" />
+            <e p="AI.cs" t="Include" />
+            <e p="Entity.cs" t="Include" />
+            <e p="FX.cs" t="Include" />
+            <e p="Level.cs" t="Include" />
+            <e p="Player.cs" t="Include" />
+            <e p="Screen.cs" t="Include" />
+            <e p="Soil.cs" t="Include" />
+            <e p="Structure.cs" t="Include" />
           </e>
           <e p="LevelController.cs" t="Include" />
           <e p="Manager.cs" t="Include" />
           <e p="UIController.cs" t="Include" />
+          <e p="World.cs" t="Include" />
         </e>
       </e>
       <e p="Engine.sln" t="IncludeFlat" />

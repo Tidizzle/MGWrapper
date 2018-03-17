@@ -56,9 +56,19 @@
     <Compile Include="View\Camera3D.cs" />
     <Compile Include="World\AudioController.cs" />
     <Compile Include="World\ContentController.cs" />
+    <Compile Include="World\Element.cs" />
+    <Compile Include="World\Level\AI.cs" />
+    <Compile Include="World\Level\Entity.cs" />
+    <Compile Include="World\Level\Level.cs" />
+    <Compile Include="World\Level\Player.cs" />
+    <Compile Include="World\Level\Screen.cs" />
+    <Compile Include="World\Level\FX.cs" />
+    <Compile Include="World\Level\Soil.cs" />
+    <Compile Include="World\Level\Structure.cs" />
     <Compile Include="World\Manager.cs" />
     <Compile Include="World\LevelController.cs" />
     <Compile Include="World\UIController.cs" />
+    <Compile Include="World\World.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Content.mgcb" />
@@ -78,11 +88,6 @@
     <Folder Include="Rendering\Texturing" />
     <Folder Include="View\Camera" />
     <Folder Include="View\Utility" />
-    <Folder Include="World\Level\AI" />
-    <Folder Include="World\Level\Entity" />
-    <Folder Include="World\Level\Player" />
-    <Folder Include="World\Level\Soil" />
-    <Folder Include="World\Level\Structure" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -56,7 +56,6 @@ namespace Engine
         protected override void Initialize()
         {
             
-
             if (Audio == null || Content == null || UI == null || Level == null)
                 throw new NullReferenceException("A manager is null, make sure to initalize them");
             
@@ -70,6 +69,7 @@ namespace Engine
 
         protected override void LoadContent()
         {
+            
             base.LoadContent();
 
             Content.Load();
@@ -80,6 +80,7 @@ namespace Engine
         
         protected override void Update(GameTime gameTime)
         {
+            
             base.Update(gameTime);
             
             Content.Update(gameTime);

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 
 namespace Engine.World
 {
@@ -6,9 +7,11 @@ namespace Engine.World
     
     public class LevelController : Manager
     {
+        public List<World> Worlds;
+        
         public override void Initalize()
         {
-            
+            Worlds = new List<World>();
         }
 
         public override void Load()
