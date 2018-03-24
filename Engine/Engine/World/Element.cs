@@ -4,6 +4,7 @@ namespace Engine.World
 {
     public abstract class Element
     {
+        
         public abstract void Initalize();
         public abstract void Load();
         public abstract void Update(GameTime time);

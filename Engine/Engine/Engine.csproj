@@ -55,18 +55,18 @@
     <Compile Include="View\Camera2D.cs" />
     <Compile Include="View\Camera3D.cs" />
     <Compile Include="World\AudioController.cs" />
-    <Compile Include="World\ContentController.cs" />
     <Compile Include="World\Element.cs" />
-    <Compile Include="World\Level\AI.cs" />
-    <Compile Include="World\Level\Entity.cs" />
+    <Compile Include="World\Level\Content\Asset.cs" />
+    <Compile Include="World\Level\Content\EffectAsset.cs" />
+    <Compile Include="World\Level\Content\FontAsset.cs" />
+    <Compile Include="World\Level\Content\ModelAsset.cs" />
+    <Compile Include="World\Level\Content\Texture2DAsset.cs" />
+    <Compile Include="World\Level\Content\Texture3DAsset.cs" />
+    <Compile Include="World\Level\Content\TextureCubeAsset.cs" />
     <Compile Include="World\Level\Level.cs" />
-    <Compile Include="World\Level\Player.cs" />
     <Compile Include="World\Level\Screen.cs" />
-    <Compile Include="World\Level\FX.cs" />
-    <Compile Include="World\Level\Soil.cs" />
-    <Compile Include="World\Level\Structure.cs" />
     <Compile Include="World\Manager.cs" />
-    <Compile Include="World\LevelController.cs" />
+    <Compile Include="World\LevelManager.cs" />
     <Compile Include="World\UIController.cs" />
     <Compile Include="World\World.cs" />
   </ItemGroup>

@@ -1,27 +1,7 @@
-﻿using Microsoft.Xna.Framework;
-
-namespace Engine.World.Level
+﻿namespace Engine.World.Level
 {
-    public class Screen : Element
+    public class Screen
     {
-        public override void Initalize()
-        {
-        }
-
-        public override void Load()
-        {
-        }
-
-        public override void Update(GameTime time)
-        {
-        }
-
-        public override void PhysicsUpdate(GameTime time)
-        {
-        }
-
-        public override void LateUpdate(GameTime time)
-        {
-        }
+        
     }
 }

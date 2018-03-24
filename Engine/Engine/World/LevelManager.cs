@@ -5,13 +5,11 @@ namespace Engine.World
 {
     // Initialize (-> Load) -> update -> physics step -> late update -> Render -> Ui Render
     
-    public class LevelController : Manager
+    public class LevelManager : Manager
     {
-        public List<World> Worlds;
         
         public override void Initalize()
         {
-            Worlds = new List<World>();
         }
 
         public override void Load()

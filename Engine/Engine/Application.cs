@@ -8,11 +8,11 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Engine
 {
     public class Application : Game
-    {
-        public AudioController Audio;
-        public ContentController Content;
-        public UiController UI;
-        public LevelController Level;
+    {   
+        public Manager Audio;
+        public Manager Content;
+        public Manager UI;
+        public LevelManager Level;
 
         public GraphicsDevice Graphics;
         public GraphicsDeviceManager GraphicsManager;
@@ -25,7 +25,7 @@ namespace Engine
         //{‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾}  
         //Initalize -> Load -> update -> physics step -> late update -> prerender -> render -> pre uirender -> ui render |-> destroy
         
-        public Application(GameParams inputParamaters, AudioController audio, ContentController content, UiController ui, LevelController level, Renderer3D rend3d, Renderer2D rend2d)
+        public Application(GameParams inputParamaters, Manager audio, Manager content, UiController ui, LevelManager level, Renderer3D rend3d, Renderer2D rend2d)
         {
 
             GraphicsManager = new GraphicsDeviceManager(this);
@@ -39,8 +39,8 @@ namespace Engine
             if (inputParamaters.Rasterizer != null)
                 Graphics.RasterizerState = inputParamaters.Rasterizer;
             
-            Audio = audio;
             Content = content;
+            Audio = audio;
             UI = ui;
             Level = level;
 
@@ -52,7 +52,7 @@ namespace Engine
         {
             Run();
         }
-
+        
         protected override void Initialize()
         {
             
