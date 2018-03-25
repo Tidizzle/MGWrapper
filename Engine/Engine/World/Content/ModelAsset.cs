@@ -1,25 +1,25 @@
 ﻿using System;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Engine.World.Level
+namespace Engine.World
 {
-    public class TextureCubeAsset : Asset
+    public class ModelAsset : Asset
     {
         public string Name;
-        public TextureCube Asset;
-        
-        public TextureCubeAsset(string name, TextureCube asset, bool usinglifetime = true,  uint lifespan = uint.MaxValue)
+        public Model Asset;
+
+        public ModelAsset(string name, Model asset, bool usingLifeTime = true, uint lifetime = uint.MaxValue)
         {
             Guid = new Guid();
             Name = name;
             Asset = asset;
 
-            if (usinglifetime)
+            if (usingLifeTime)
             {
                 UsingLifeTime = true;
                 CreationTime = DateTime.Now;
                 LastUse = DateTime.Now;
-                LifeSpan = lifespan;
+                LifeSpan = lifetime;
             }
             else
                 UsingLifeTime = false;

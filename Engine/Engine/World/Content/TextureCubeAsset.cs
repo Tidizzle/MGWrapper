@@ -1,14 +1,14 @@
 ﻿using System;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Engine.World.Level
+namespace Engine.World
 {
-    public class Texture2DAsset : Asset
+    public class TextureCubeAsset : Asset
     {
         public string Name;
-        public Texture2D Asset;
-
-        public Texture2DAsset(string name, Texture2D asset, bool usinglifetime = true,  uint lifespan = uint.MaxValue)
+        public TextureCube Asset;
+        
+        public TextureCubeAsset(string name, TextureCube asset, bool usinglifetime = true,  uint lifespan = uint.MaxValue)
         {
             Guid = new Guid();
             Name = name;

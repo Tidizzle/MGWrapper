@@ -42,11 +42,6 @@
 		|-> Level Editor
 		
 	
-	
-	
-	
-	
-
 	World ->        UI ->   -> Overlay
 							-> Screen
 			     Level ->   -> LevelLayers ->   -> Soil    ->   -> Penetrable   <-  /- Interactable

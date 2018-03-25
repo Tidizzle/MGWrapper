@@ -11,7 +11,7 @@ namespace Engine
     {   
         public Manager Audio;
         public Manager Content;
-        public Manager UI;
+        public UIManager UI;
         public LevelManager Level;
 
         public GraphicsDevice Graphics;
@@ -25,7 +25,18 @@ namespace Engine
         //{‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾}{‾‾‾‾‾‾‾‾‾‾}  
         //Initalize -> Load -> update -> physics step -> late update -> prerender -> render -> pre uirender -> ui render |-> destroy
         
-        public Application(GameParams inputParamaters, Manager audio, Manager content, UiController ui, LevelManager level, Renderer3D rend3d, Renderer2D rend2d)
+        
+        /// <summary>
+        /// Constructor of Game
+        /// </summary>
+        /// <param name="inputParamaters">Packet of startup info </param>
+        /// <param name="audio">Audio manager instance</param>
+        /// <param name="content">Content manager instance</param>
+        /// <param name="ui">Ui manager instance</param>
+        /// <param name="level"> Level manager instance</param>
+        /// <param name="rend3d">3D Renderer instance</param>
+        /// <param name="rend2d">2D (UI Primarilly) Renderer instance </param>
+        public Application(GameParams inputParamaters, Manager audio, Manager content, UIManager ui, LevelManager level, Renderer3D rend3d, Renderer2D rend2d)
         {
 
             GraphicsManager = new GraphicsDeviceManager(this);
@@ -48,6 +59,9 @@ namespace Engine
             UiRenderer = rend2d;
         }
 
+        /// <summary>
+        /// Starts game loop execution
+        /// </summary>
         public void Start()
         {
             Run();
@@ -72,10 +86,14 @@ namespace Engine
             
             base.LoadContent();
 
+            //load this first
             Content.Load();
+            
+            //have all the other types request loads from the content controller and pass back a reference to that asset in the content controller
             Audio.Load();
             UI.Load();
             Level.Load();
+            
         }
         
         protected override void Update(GameTime gameTime)
@@ -83,14 +101,18 @@ namespace Engine
             
             base.Update(gameTime);
             
+            ///3 update stages
+            GeneralUpdate(gameTime);
+            PhysicsUpdate(gameTime);
+            LateUpdate(gameTime);
+        }
+
+        protected void GeneralUpdate(GameTime gameTime)
+        {
             Content.Update(gameTime);
             Audio.Update(gameTime);
             UI.Update(gameTime);
             Level.Update(gameTime);
-            
-            
-            PhysicsUpdate(gameTime);
-            LateUpdate(gameTime);
         }
 
         protected void PhysicsUpdate(GameTime gameTime)
@@ -98,9 +120,9 @@ namespace Engine
             Level.PhysicsUpdate(gameTime);
         }
 
-        protected void LateUpdate(GameTime gameTimee)
+        protected void LateUpdate(GameTime gameTime)
         {
-            Level.LateUpdate(gameTimee);
+            Level.LateUpdate(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
@@ -108,6 +130,10 @@ namespace Engine
             GraphicsDevice.Clear(Color.CornflowerBlue);
             base.Draw(gameTime);
             
+            //render in 2 stages
+            //Render and Ui render, both with 2 more stages
+            //prerender sends all of the items to be rendered with a packet of data along side it
+            //render is only used by the renderers and goes through the items and renders them 3d and 2d
             PreRender();
             Render();
             
@@ -137,8 +163,6 @@ namespace Engine
             UiRenderer.UiRender();
         }
         
-
-
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -150,6 +174,9 @@ namespace Engine
         }
     }
 
+    /// <summary>
+    /// Parameter packet for game initalization
+    /// </summary>
     public struct GameParams
     {
         public int WindowWidth;
@@ -158,6 +185,14 @@ namespace Engine
         public bool PreferMultisampling;
         public RasterizerState Rasterizer;
         
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="windowWidth">Width of window in pixels</param>
+        /// <param name="windowHeight">Height of window in pixels</param>
+        /// <param name="isFullscreen">Fullscreen enabled or not</param>
+        /// <param name="multiSampling">Multisampling enabled or not</param>
+        /// <param name="rasterizerState">Optional rasterizer state input</param>
         public GameParams(int windowWidth, int windowHeight, bool isFullscreen, bool multiSampling, RasterizerState rasterizerState = null)
         {
             WindowWidth = windowWidth;

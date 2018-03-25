@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Engine.World.Level
+namespace Engine.World
 {
     public class Asset
     {

@@ -1,14 +1,14 @@
 ﻿using System;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Engine.World.Level
+namespace Engine.World
 {
-    public class FontAsset : Asset
+    public class Texture3DAsset : Asset
     {
         public string Name;
-        public SpriteFont Asset;
+        public Texture3D Asset;
         
-        public FontAsset(string name, SpriteFont asset, bool usinglifetime = true,  uint lifespan = uint.MaxValue)
+        public Texture3DAsset(string name, Texture3D asset, bool usinglifetime = true,  uint lifespan = uint.MaxValue)
         {
             Guid = new Guid();
             Name = name;

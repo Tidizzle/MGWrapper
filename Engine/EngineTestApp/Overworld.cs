@@ -1,15 +1,18 @@
 ﻿using System.Collections.Generic;
+using Engine.World;
 using Engine.World.Level;
 using Microsoft.Xna.Framework;
-using Stage = Engine.World.Level.Level;
 
-namespace Engine.World
+
+namespace EngineTestApp
 {
-    public class World
+    public class Overworld : IWorld
     {
-        protected List<Stage> Levels;
-        protected List<Screen> Uis;
-
+        public List<Level.Level> Levels { get; set; }
+        public List<Screen> Uis { get; set; }
+        
+        public string WorldName { get; set; }
+        
         public void Initalize()
         {
             
@@ -33,17 +36,15 @@ namespace Engine.World
 
         public void PreRender()
         {
-            
         }
 
-        public void PreUiRender()
+        public void PreUIRender()
         {
-            
         }
 
         public void Destroy()
         {
-            
         }
+
     }
 }

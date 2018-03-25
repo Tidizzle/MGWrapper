@@ -1,4 +1,4 @@
-﻿namespace Engine.World.Level
+﻿namespace Engine.World
 {
     public class Screen
     {

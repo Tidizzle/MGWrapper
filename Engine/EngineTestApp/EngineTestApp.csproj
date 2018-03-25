@@ -50,6 +50,7 @@
     <Compile Include="Audio.cs" />
     <Compile Include="Content.cs" />
     <Compile Include="Level.cs" />
+    <Compile Include="Overworld.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rend2d.cs" />

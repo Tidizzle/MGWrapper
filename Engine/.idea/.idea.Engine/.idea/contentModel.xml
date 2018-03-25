@@ -49,25 +49,48 @@
           <e p="Utility" t="Include" />
         </e>
         <e p="World" t="Include">
-          <e p="AudioController.cs" t="Include" />
-          <e p="Element.cs" t="Include" />
-          <e p="Level" t="Include">
-            <e p="Content" t="Include">
-              <e p="Asset.cs" t="Include" />
-              <e p="EffectAsset.cs" t="Include" />
-              <e p="FontAsset.cs" t="Include" />
-              <e p="ModelAsset.cs" t="Include" />
-              <e p="Texture2DAsset.cs" t="Include" />
-              <e p="Texture3DAsset.cs" t="Include" />
-              <e p="TextureCubeAsset.cs" t="Include" />
-            </e>
-            <e p="Level.cs" t="Include" />
-            <e p="Screen.cs" t="Include" />
+          <e p="Bases" t="Include">
+            <e p="Element.cs" t="Include" />
+            <e p="ILoop.cs" t="Include" />
+            <e p="IWorld.cs" t="Include" />
           </e>
-          <e p="LevelManager.cs" t="Include" />
-          <e p="Manager.cs" t="Include" />
-          <e p="UIController.cs" t="Include" />
-          <e p="World.cs" t="Include" />
+          <e p="Content" t="Include">
+            <e p="Asset.cs" t="Include" />
+            <e p="EffectAsset.cs" t="Include" />
+            <e p="FontAsset.cs" t="Include" />
+            <e p="ModelAsset.cs" t="Include" />
+            <e p="Texture2DAsset.cs" t="Include" />
+            <e p="Texture3DAsset.cs" t="Include" />
+            <e p="TextureCubeAsset.cs" t="Include" />
+          </e>
+          <e p="Layers" t="Include">
+            <e p="Attributes" t="Include">
+              <e p="IDestructable.cs" t="Include" />
+              <e p="IInteractable.cs" t="Include" />
+              <e p="ILight.cs" t="Include" />
+              <e p="IMovable.cs" t="Include" />
+              <e p="IParticle.cs" t="Include" />
+              <e p="IPenetrable.cs" t="Include" />
+              <e p="ISolid.cs" t="Include" />
+              <e p="IStatic.cs" t="Include" />
+              <e p="IStorable.cs" t="Include" />
+            </e>
+            <e p="IAi.cs" t="Include" />
+            <e p="IEmitter.cs" t="Include" />
+            <e p="IObject.cs" t="Include" />
+            <e p="IPlayer.cs" t="Include" />
+            <e p="ISoil.cs" t="Include" />
+            <e p="IStructure.cs" t="Include" />
+          </e>
+          <e p="Level.cs" t="Include" />
+          <e p="Managers" t="Include">
+            <e p="LevelManager.cs" t="Include" />
+            <e p="Manager.cs" t="Include" />
+            <e p="UIManager.cs" t="Include" />
+          </e>
+          <e p="Overlay.cs" t="Include" />
+          <e p="Screen.cs" t="Include" />
+          <e p="UserInterface.cs" t="Include" />
         </e>
       </e>
       <e p="Engine.sln" t="IncludeFlat" />
@@ -78,6 +101,7 @@
         <e p="EngineTestApp.csproj" t="IncludeRecursive" />
         <e p="Level.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
+        <e p="Overworld.cs" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />

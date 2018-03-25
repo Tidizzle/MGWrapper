@@ -1,25 +1,25 @@
 ﻿using System;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Engine.World.Level
+namespace Engine.World
 {
-    public class ModelAsset : Asset
+    public class Texture2DAsset : Asset
     {
         public string Name;
-        public Model Asset;
+        public Texture2D Asset;
 
-        public ModelAsset(string name, Model asset, bool usingLifeTime = true, uint lifetime = uint.MaxValue)
+        public Texture2DAsset(string name, Texture2D asset, bool usinglifetime = true,  uint lifespan = uint.MaxValue)
         {
             Guid = new Guid();
             Name = name;
             Asset = asset;
 
-            if (usingLifeTime)
+            if (usinglifetime)
             {
                 UsingLifeTime = true;
                 CreationTime = DateTime.Now;
                 LastUse = DateTime.Now;
-                LifeSpan = lifetime;
+                LifeSpan = lifespan;
             }
             else
                 UsingLifeTime = false;
